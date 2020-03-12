@@ -1,7 +1,7 @@
 let img;
 
 var iso = 0;
-var sat = 0;
+var sat = 1;
 
 var reset = false;
 class Pixel{
@@ -60,7 +60,8 @@ class imageSegment {
     }
 }
 function preload(){
-    img = loadImage('https://picsum.photos/id/1002/1920/1080');
+    img = loadImage('./francisco-ghisletti-CfMEecyNtHc-unsplash.jpg');
+    //img = loadImage('https://cors-anywhere.herokuapp.com/picsum.photos/id/1002/1920/1080');
     //img = loadImage('https://cors-anywhere.herokuapp.com/photos.smugmug.com/Assets/Scouting/n-93LwtP/Background/i-RnshQJ2/0/4d99517c/X5/francisco-ghisletti-CfMEecyNtHc-unsplash-X5.jpg');
 }
 
@@ -78,6 +79,7 @@ function setup(){
 }
 function drawImage(delta){
     img.loadPixels();
+    //console.log("drawing");
     const d = pixelDensity();
 
 
@@ -107,18 +109,17 @@ function updateSat(val){
 }
 var globalDelta = 500;
 function draw(){
-    console.log("DRAW)");
 
     // Progressive renders more
     //image(img, 0, 0, width, height);
 
-    if(globalDelta <= 1 || reset){
-        noLoop();
-    }else{
-        reset = false
+
+
+    if (globalDelta > 5){
         drawImage(globalDelta);
         globalDelta = globalDelta/2;
+    }else{
+        //console.log("DONE");
     }
-
 
 }
