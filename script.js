@@ -96,13 +96,13 @@ function drawImage(delta){
     }
 }
 
-function updateISO(val){
+function setISO(val){
     this.iso = val;
     this.reset = true;
     globalDelta = 500;
 }
 
-function updateSat(val){
+function setSat(val){
     this.sat = val;
     this.reset = true;
     globalDelta = 500;
