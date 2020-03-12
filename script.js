@@ -77,6 +77,12 @@ function setup(){
     }
 
 }
+function help(){
+    console.log("Use the setISO(x) method to set the image iso (0-255)");
+    console.log("Use the setSat(x) method to set saturation (> 0)");
+    return(null);
+
+}
 function drawImage(delta){
     img.loadPixels();
     //console.log("drawing");
