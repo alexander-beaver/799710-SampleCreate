@@ -66,7 +66,7 @@ function preload(){
 }
 
 function setup(){
-    createCanvas(1920, 1080);
+    createCanvas(800, 550);
     img.loadPixels();
     reset = true;
     if(img.width < img.height){
@@ -99,15 +99,15 @@ function drawImage(delta){
 function setISO(val){
     this.iso = val;
     this.reset = true;
-    globalDelta = 500;
+    globalDelta = 400;
 }
 
 function setSat(val){
     this.sat = val;
     this.reset = true;
-    globalDelta = 500;
+    globalDelta = 400;
 }
-var globalDelta = 500;
+var globalDelta = 400;
 function draw(){
 
     // Progressive renders more
@@ -115,7 +115,7 @@ function draw(){
 
 
 
-    if (globalDelta > 5){
+    if (globalDelta > 2){
         drawImage(globalDelta);
         globalDelta = globalDelta/2;
     }else{
